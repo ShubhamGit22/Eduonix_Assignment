@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+// Question 1: Map Basics
+// Create a JavaScript program that uses a Map to store the names of five countries as keys and their corresponding capitals as values. Print out the names of all the countries and their capitals stored in the Map.
+
+const countryCapitals = new Map();
+
+countryCapitals.set("India", "New Delhi");
+countryCapitals.set("Japan", "Tokyo");
+countryCapitals.set("United States of America", "Washington, D.C.");
+countryCapitals.set("United Kingdom", "London");
+countryCapitals.set("China", "Beijing");
+
+for (const [country, capital] of countryCapitals) {
+  console.log(`${country}: ${capital}`);
+}
+
+
+
+// Question 2: Set Deduplication
+// Write a JavaScript program that takes an array of numbers as input and uses a Set to remove duplicates from the array. After removing duplicates, print the elements of the Set.
+
+function removeDuplicates(array) {
+  const set = new Set();
+
+  array.forEach(element => set.add(element));
+  return set;
+}
+const numbers = [1, 2, 3, 4, 5, 1, 2, 3, 6, 7, 8, 9, 10];
+const uniqueNumbers = removeDuplicates(numbers);
+
+uniqueNumbers.forEach(element => console.log(element));
+
+
+
+
+// Question 3: Map Operations
+// Implement a JavaScript program that demonstrates the following operations on a Map:
+// Add three key-value pairs to the Map.
+// Print the keys and values in the Map.
+// Check if a specific key exists in the Map.
+// Remove one key-value pair from the Map.
+
+const map = new Map();
+
+map.set("name", "John Doe");
+map.set("age", 30);
+map.set("occupation", "Software Engineer");
+console.log("Keys:");
+
+map.keys().forEach(key => console.log(key));
+console.log("Values:");
+
+map.values().forEach(value => console.log(value));
+const hasKey = map.has("age");
+console.log(`Does the map have the key "age"? ${hasKey}`); // true
+
+map.delete("occupation");
+console.log("Keys after removing occupation key:");
+map.keys().forEach(key => console.log(key));
+console.log("Values after removing occupation key:");
+map.values().forEach(value => console.log(value));
+
+
+
+
+
+// Question 4: Set Set Operations
+// Create a JavaScript program that creates two Sets, one for storing even numbers between 1 and 10, and another for storing odd numbers between 1 and 10. Perform the following set operations:
+
+// Find the union of the two sets.
+// Find the intersection of the two sets.
+// Find the elements that are only in the even numbers set.
+// Find the elements that are only in the odd numbers set.
+
+const evenNumbers = new Set([2, 4, 6, 8, 10]);
+const oddNumbers = new Set([1, 3, 5, 7, 9]);
+
+const union = new Set([...evenNumbers, ...oddNumbers]);
+
+const intersection = new Set();
+for (const number of evenNumbers) {
+  if (oddNumbers.has(number)) {
+    intersection.add(number);
+  }
+}
+
+const evenNumbersOnly = new Set([...evenNumbers].filter((number) => !oddNumbers.has(number)));
+const oddNumbersOnly = new Set([...oddNumbers].filter((number) => !evenNumbers.has(number)));
+
+console.log("Union of the two sets:", union);
+console.log("Intersection of the two sets:", intersection);
+console.log("Elements that are only in the even numbers set:", evenNumbersOnly);
+console.log("Elements that are only in the odd numbers set:", oddNumbersOnly);
+
+
+
+
+
+
+// Question 5: Map Iteration
+// Write a JavaScript program that uses a Map to store the names of fruits as keys and their corresponding colors as values. Write a loop to iterate through the Map and print out each fruit's name and color.
+
+const fruitColors = new Map();
+
+fruitColors.set("Apple", "Red");
+fruitColors.set("Banana", "Yellow");
+fruitColors.set("Orange", "Orange");
+fruitColors.set("Grape", "Purple");
+fruitColors.set("Strawberry", "Red");
+
+for (const [fruit, color] of fruitColors) {
+  console.log(`${fruit}: ${color}`);
+}
+
+
+
+
+
+// Question 6: Set Size and Clear
+// Create a JavaScript program that demonstrates the use of the Set's size property and clear() method. Create a Set of integers, add some elements to it, print its size, and then clear the Set. Print its size again to confirm that it's empty.
+
+const integerSet = new Set();
+
+integerSet.add(1);
+integerSet.add(2);
+integerSet.add(3);
+integerSet.add(4);
+integerSet.add(5);
+
+console.log("Size of the Set before clearing:", integerSet.size); // 5
+
+integerSet.clear();
+console.log("Size of the Set after clearing:", integerSet.size); // 0
+
+
+
+// Question 7: Map Value Update
+// Implement a JavaScript program that uses a Map to store the names of cities as keys and their populations as values. Write a function that updates the population of a given city. Print the updated population of the city after the update.
+
+const cityPopulations = new Map();
+
+cityPopulations.set("New York City", 8804190);
+cityPopulations.set("Los Angeles", 3990456);
+cityPopulations.set("Chicago", 2746388);
+cityPopulations.set("Houston", 2320236);
+cityPopulations.set("Phoenix", 1680987);
+
+function updateCityPopulation(cityName, newPopulation) {
+  cityPopulations.set(cityName, newPopulation);
+}
+
+updateCityPopulation("New York City", 9000000);
+
+const updatedPopulation = cityPopulations.get("New York City");
+console.log(`The updated population of New York City is: ${updatedPopulation}`);
+
+
+
+
+// Question 8: Set Contains
+// Create a JavaScript program that uses a Set to store the names of five programming languages. Implement a function that checks if a given programming language name exists in the Set and returns a boolean value.
+
+const programmingLanguages = new Set(["JavaScript", "Python", "Java", "C++" ,"C#"]);
+
+function checkIfProgrammingLanguageExists(programmingLanguageName) {
+  return programmingLanguages.has(programmingLanguageName);
+}
+
+const doesLanguageExist = checkIfProgrammingLanguageExists("JavaScript");
+
+console.log("Does the programming language name 'JavaScript' exist in the Set?", doesLanguageExist); // true
+
+
+
+
+
+// Question 9: Map Keys and Values
+// Write a JavaScript program that uses a Map to store the names of countries as keys and their official languages as values. Print out the keys and values of the Map separately.
+
+const countryOfficialLanguages = new Map();
+
+countryOfficialLanguages.set("India", "Hindi");
+countryOfficialLanguages.set("United States of America", "English");
+countryOfficialLanguages.set("China", "Mandarin Chinese");
+countryOfficialLanguages.set("Japan", "Japanese");
+countryOfficialLanguages.set("United Kingdom", "English");
+
+console.log("Keys of the Map:");
+countryOfficialLanguages.keys().forEach(key => console.log(key));
+
+console.log("Values of the Map:");
+countryOfficialLanguages.values().forEach(value => console.log(value));
+
+
+
+
+
+// Question 10: Set Remove
+// Create a JavaScript program that uses a Set to store the names of colors. Implement a function to remove a specific color from the Set and print the updated set of colors.
+
+const colors = new Set(["Red", "Green", "Blue", "Yellow", "Orange"]);
+
+function removeColorFromSet(colorName) {
+  colors.delete(colorName);
+}
+removeColorFromSet("Blue");
+
+console.log("Updated set of colors:");
+colors.forEach(color => console.log(color));
+
+
+
+
+    </script>
+</body>
+</html>
