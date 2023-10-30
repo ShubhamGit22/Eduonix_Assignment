@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// A]EASY
+
+//1. Reverse a string without using the reverse method or a function.
+
+alert("1. Reverse a string without using the reverse method or a function.");
+console.log("1. Reverse a string without using the reverse method or a function.");
+const str = prompt("Enter the string :");
+function reverseString(str) {
+    if (str === "")
+     return "";
+  
+    let reversedString = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+      reversedString += str[i];
+    }
+    return reversedString;
+  }
+  const reversedString = reverseString(str);
+  console.log(reversedString); 
+
+  
+  
+// 2. Count the number of vowels in a string without using functions.
+
+alert("2. Count the number of vowels in a string without using functions.");
+console.log("\n 2. Count the number of vowels in a string without using functions.");
+const str_ = prompt("Enter the string :");
+
+let vowelCount = 0;
+
+for (let i = 0; i < str_.length; i++) {
+  if (str_.charAt(i) === "a" || str_.charAt(i) === "e" || str_.charAt(i) === "i" || str_.charAt(i) === "o" || str_.charAt(i) === "u") {
+    vowelCount++;
+  }
+}
+console.log(`The number of vowels in the string "${str_}" is ${vowelCount}`);
+
+
+
+//3. Check if a string is a palindrome without using functions.
+
+alert("3. Check if a string is a palindrome without using functions.");
+console.log("\n 3. Check if a string is a palindrome without using functions.");
+let input = prompt("Enter string to check:");
+let rev_input = "";
+
+while (input === null) {
+    console.log("String cannot be empty!");
+    input = prompt("Enter string to check:");
+}
+if (input === null) {
+    console.log('Please Enter string');
+}
+else {
+    for (let index = input.length - 1; index >= 0; index--)
+        rev_input += input.charAt(index);
+
+    if (input.toLocaleLowerCase() === rev_input.toLocaleLowerCase())
+        console.log(`Reverse is: ${rev_input} \n Palindrome!`);
+    else
+        console.log(`Reverse is: ${rev_input} \n Not Palindrome!`);
+}
+
+
+
+//4. Capitalize the first letter of each word in a sentence without using functions.
+
+alert("4. Capitalize the first letter of each word in a sentence without using functions.");
+console.log("\n 4 Capitalize the first letter of each word in a sentence without using functions.");
+let sentence = prompt("Enter a sentence"); 
+let capitalizedSentence = ""; 
+let capitalizeNext = true;  
+for (let i = 0; i < sentence.length; i++) {
+    const char = sentence[i];
+    
+    if (char === ' ') { 
+        capitalizedSentence += ' '; 
+        capitalizeNext = true; 
+    } else {
+        if (capitalizeNext) { 
+            capitalizedSentence += char.toUpperCase(); 
+            capitalizeNext = false; 
+        } else {
+            capitalizedSentence += char.toLowerCase(); 
+        }
+    }
+}
+console.log(capitalizedSentence);  
+
+
+
+//5. Remove all spaces from a string without using functions.
+
+alert("5. Remove all spaces from a string without using functions.");
+console.log("\n 5. Remove all spaces from a string without using functions.");
+let input_String = prompt("Enter a string");
+let stringWithoutSpaces = "";
+for (let i = 0; i < input_String.length; i++) {
+    const char = input_String[i]; 
+    if (char !== ' ') {
+        stringWithoutSpaces += char;
+    }
+}
+console.log(stringWithoutSpaces);  
+
+
+
+
+
+// B] MEDIUM
+
+//1. Find the longest word in a sentence without using functions.
+
+alert("1. Find the longest word in a sentence without using functions.");
+console.log(" \n 1. Find the longest word in a sentence without using functions.");
+let sentence_ = prompt("Enter a sentence"); //input a sentence
+let longestWord = "";
+let currentWord = "";
+for (let i = 0; i < sentence_.length; i++) {
+  const char = sentence_[i];
+  if (char === " ") {
+    if (currentWord.length > longestWord.length) {
+      longestWord = currentWord;
+    }
+    currentWord = "";
+  } else {
+    currentWord += char;
+  }
+}
+if (currentWord.length > longestWord.length) {
+  longestWord = currentWord;
+}
+console.log(longestWord); 
+
+
+
+//2. Check if two strings are anagrams of each other without using functions.
+
+alert("2. Check if two strings are anagrams of each other without using functions.");
+console.log("\n 2. Check if two strings are anagrams of each other without using functions.");
+let str1 = prompt("Enter a string 1:");
+let str2 = prompt("Enter a string 2:");
+
+str1 = str1.replace(/\s/g, '').toLowerCase();
+str2 = str2.replace(/\s/g, '').toLowerCase();
+
+let areAnagrams = true; 
+
+if (str1.length !== str2.length) {
+  areAnagrams = false; 
+} else {
+  const charCount = {};
+
+  for (let i = 0; i < str1.length; i++) {
+    const char = str1[i];
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+
+  for (let i = 0; i < str2.length; i++) {
+    const char = str2[i];
+    if (!charCount[char]) {
+      areAnagrams = false; 
+      break; 
+    }
+    charCount[char]--;
+  }
+
+  for (const char in charCount) {
+    if (charCount[char] !== 0) {
+      areAnagrams = false; 
+      break; // 
+    }
+  }
+}
+
+if (areAnagrams) {
+  console.log('The strings are anagrams.');
+} else {
+  console.log('The strings are not anagrams.');
+}
+
+
+
+//3. Replace all occurrences of a given substring with another substring in a string without using functions.
+
+alert("//3. Replace all occurrences of a given substring with another substring in a string without using functions.");
+console.log("\n //3. Replace all occurrences of a given substring with another substring in a string without using functions.");
+let originalString = prompt("Enter a original string: //for example : hello world hello");  
+let oldSubstring = prompt("Enter a old string://for example : hello");        
+let newSubstring = prompt("Enter a new string string://for example : hi");  
+let replacedString = '';
+
+let i = 0;
+
+while (i < originalString.length) {
+    let match = true;
+
+    for (let j = 0; j < oldSubstring.length; j++) {
+        if (originalString[i + j] !== oldSubstring[j]) {
+            match = false;
+            break;
+        }
+    }
+
+    if (match) {
+        replacedString += newSubstring;
+        i += oldSubstring.length;
+    } else {
+        replacedString += originalString[i];
+        i++;
+    }
+}
+
+console.log(replacedString); 
+
+
+
+//4. Truncate a string to a specified length and add "..." at the end if the string is longer than the specified length without using functions.
+
+alert("4. Truncate a string to a specified length and add (...) at the end if the string is longer than the specified length without using functions");
+console.log("\n  4. Truncate a string to a specified length and add (...) at the end if the string is longer than the specified length without using functions.");
+let original_String = prompt('Enter a original string ://for ex: This is a long string that needs to be truncated');
+let maxLength = 20;
+let truncatedString = '';
+
+if (original_String.length <= maxLength) {
+    truncatedString = original_String;
+} else {
+    for (let i = 0; i < maxLength; i++) {
+        truncatedString += original_String[i];
+    }
+    truncatedString += '...';
+}
+
+ console.log(truncatedString); 
+
+
+
+//5. Determine if a string has balanced parentheses (e.g., "(()())" is balanced, but "())(" is not) without using functions.
+
+alert("5. Determine if a string has balanced parentheses (e.g., (()()) is balanced, but ())( is not) without using functions.");
+console.log("5.\n Determine if a string has balanced parentheses (e.g., (()()) is balanced, but ())(is not) without using functions.");
+let inputString = prompt("Enter a string with parentheses:"); // the user to input a string with parentheses
+let openCount = 0;
+let closeCount = 0;
+for (let i = 0; i < inputString.length; i++) {
+    if (inputString[i] === '(') {
+        openCount++;  
+    } else if (inputString[i] === ')') {
+        closeCount++;  
+        
+        if (closeCount > openCount) {
+            console.log("Unbalanced parentheses");
+            break; 
+        }
+    }
+}
+if (openCount === closeCount) {
+    console.log("Balanced parentheses");
+} else {
+    console.log("Unbalanced parentheses");
+}
+
+
+
+
+    </script>
+</body>
+</html>
