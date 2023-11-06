@@ -1,1 +1,1 @@
-Get a complete view of the cryptocurrency market with our Trend Indicator with a sleek and styled webpage which provided real time data. Discover the latest cryptocurrency market trends with a sleek, styled webpage that presents real-time data along with price formatting and dynamic colour indicators for positive and negative change."
+Get a complete view of the cryptocurrency market with our Trend Indicator with a sleek and styled webpage which provided real time data."
