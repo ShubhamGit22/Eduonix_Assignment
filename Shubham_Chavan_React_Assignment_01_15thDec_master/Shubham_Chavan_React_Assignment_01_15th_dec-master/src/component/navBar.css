@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+.navBar{
+    border: solid 2px black;
+    color:white;
+    background-color: #2C3E50;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height:5rem;
+    width: 84.5rem;
+    position:fixed;
+    z-index: 1;
+ 
+   
+}
+.navBar li{
+   
+    float: left;
+ 
+    margin-left: 4rem;
+    /* margin-top: 1rem; */
+   transform: translate(50rem,-2rem);
+   list-style: none;
+
+  
+}
+.navBar a{
+    color: #fff;
+}
+.navBar a:hover{
+    color:#1ABC9C;
+    cursor: pointer;
+   
+}
+.navBar h1{
+    margin-top: 1rem;
+    transform: translateX(5rem);
+}
+.secOne{
+    /* border: solid 2px black; */
+    height:40rem;
+    background-color: #1ABC9C;
+
+}
+.profile{
+    height:15rem;
+    width:15rem;
+    transform: translate(35rem,7rem);
+}
+.secOne h1{
+    color: #fff;
+    font-size: 4rem;
+    transform: translate(23.8rem,9rem);
+}
+.line{
+    border: solid #fff 2px;
+    width:10rem;
+    border-radius: 5px;
+    transform: translate(30rem,12rem);
+}
+.line2{
+    border: solid #fff 2px;
+    width:10rem;
+    border-radius: 5px;
+    transform: translate(45rem,11.75rem);
+}
+.star{
+    position: absolute;
+    height:3rem;
+    width:3rem;
+    transform: translate(41rem,10.4rem);
+   
+}
+.secOne h2{
+    color: #fff;
+    transform: translate(28rem,15rem);
+}
+

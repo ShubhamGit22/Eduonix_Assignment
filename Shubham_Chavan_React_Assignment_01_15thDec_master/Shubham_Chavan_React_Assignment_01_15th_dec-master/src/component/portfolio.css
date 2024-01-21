@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.secTwo{
+   
+    height: 60rem;
+}
+.l1{
+    border: solid #000 2px;
+    width:10rem;
+    border-radius: 5px;
+    transform: translate(30rem,10.8rem);
+}
+.l2{
+    border: solid #000 2px;
+    width:10rem;
+    border-radius: 5px;
+    transform: translate(45rem,10.6rem);
+}
+.star1{
+    position: absolute;
+    height:3rem;
+    width:3rem;
+    transform: translate(41rem,9rem);
+   
+}
+.secTwo h1{
+    font-size: 4rem;
+    transform: translate(31rem,7rem);
+}
+.flex{
+   
+    display: flex;
+    flex-wrap: wrap;
+    width:70rem;
+    margin-left: 8rem;
+    justify-content: center;
+   
+    margin-top: 13rem;
+}
+.flex img{
+    height: 18rem;
+    width:18rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}

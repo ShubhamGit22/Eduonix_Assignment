@@ -1,0 +1,33 @@
+*{padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+.footer{
+    color:#fff;
+    background-color: #2C3E50;
+    height: 20rem;
+}
+.footerTitle{
+    margin-top: 2rem;
+    width:15rem;
+    height: 10rem;
+    text-align: center;
+    transform: translate(9rem,5.8rem);
+}
+.footerTitle2{
+    transform: translate(27rem,-5rem);
+}
+.fb i{
+    margin-left: 3rem;
+}
+.fb i:hover{
+ 
+   transform: scale(1.2,1.2);
+    
+}
+.footerTitle3{
+    transform: translate(55rem,-13.5rem);
+}
+.footerTitle3 a{
+    color: greenyellow;
+}
