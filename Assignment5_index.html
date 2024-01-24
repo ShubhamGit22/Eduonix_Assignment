@@ -12,45 +12,38 @@
 
 //1. Reverse a string without using the reverse method or a function.
 
-alert("1. Reverse a string without using the reverse method or a function.");
-console.log("1. Reverse a string without using the reverse method or a function.");
-const str = prompt("Enter the string :");
 function reverseString(str) {
-    if (str === "")
-     return "";
-  
-    let reversedString = "";
-    for (let i = str.length - 1; i >= 0; i--) {
-      reversedString += str[i];
-    }
-    return reversedString;
+  let reversedStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversedStr += str[i];
   }
-  const reversedString = reverseString(str);
-  console.log(reversedString); 
+  return reversedStr;
+}
+
+const originalStr = "Hello, world!";
+const reversedStr = reverseString(originalStr);
+console.log(reversedStr); 
 
   
   
 // 2. Count the number of vowels in a string without using functions.
 
-alert("2. Count the number of vowels in a string without using functions.");
-console.log("\n 2. Count the number of vowels in a string without using functions.");
-const str_ = prompt("Enter the string :");
-
+let str = "Hello, world!";
 let vowelCount = 0;
 
-for (let i = 0; i < str_.length; i++) {
-  if (str_.charAt(i) === "a" || str_.charAt(i) === "e" || str_.charAt(i) === "i" || str_.charAt(i) === "o" || str_.charAt(i) === "u") {
+for (let i = 0; i < str.length; i++) {
+  const char = str[i].toLowerCase();
+  if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
     vowelCount++;
   }
 }
-console.log(`The number of vowels in the string "${str_}" is ${vowelCount}`);
+
+console.log(vowelCount);
 
 
 
 //3. Check if a string is a palindrome without using functions.
 
-alert("3. Check if a string is a palindrome without using functions.");
-console.log("\n 3. Check if a string is a palindrome without using functions.");
 let input = prompt("Enter string to check:");
 let rev_input = "";
 
@@ -75,34 +68,32 @@ else {
 
 //4. Capitalize the first letter of each word in a sentence without using functions.
 
-alert("4. Capitalize the first letter of each word in a sentence without using functions.");
-console.log("\n 4 Capitalize the first letter of each word in a sentence without using functions.");
-let sentence = prompt("Enter a sentence"); 
-let capitalizedSentence = ""; 
-let capitalizeNext = true;  
+let sentence = "hello world, how are you?";
+let capitalizedSentence = "";
+
+let isWordStart = true;
+
 for (let i = 0; i < sentence.length; i++) {
-    const char = sentence[i];
-    
-    if (char === ' ') { 
-        capitalizedSentence += ' '; 
-        capitalizeNext = true; 
-    } else {
-        if (capitalizeNext) { 
-            capitalizedSentence += char.toUpperCase(); 
-            capitalizeNext = false; 
-        } else {
-            capitalizedSentence += char.toLowerCase(); 
-        }
-    }
+  const char = sentence[i];
+
+  if (isWordStart) {
+    capitalizedSentence += char.toUpperCase();
+    isWordStart = false;
+  } else {
+    capitalizedSentence += char;
+  }
+
+  if (char === " ") {
+    isWordStart = true;
+  }
 }
-console.log(capitalizedSentence);  
+
+console.log(capitalizedSentence);
 
 
 
 //5. Remove all spaces from a string without using functions.
 
-alert("5. Remove all spaces from a string without using functions.");
-console.log("\n 5. Remove all spaces from a string without using functions.");
 let input_String = prompt("Enter a string");
 let stringWithoutSpaces = "";
 for (let i = 0; i < input_String.length; i++) {
@@ -121,9 +112,7 @@ console.log(stringWithoutSpaces);
 
 //1. Find the longest word in a sentence without using functions.
 
-alert("1. Find the longest word in a sentence without using functions.");
-console.log(" \n 1. Find the longest word in a sentence without using functions.");
-let sentence_ = prompt("Enter a sentence"); //input a sentence
+let sentence_ = prompt("Enter a sentence"); 
 let longestWord = "";
 let currentWord = "";
 for (let i = 0; i < sentence_.length; i++) {
@@ -144,60 +133,12 @@ console.log(longestWord);
 
 
 
-//2. Check if two strings are anagrams of each other without using functions.
-
-alert("2. Check if two strings are anagrams of each other without using functions.");
-console.log("\n 2. Check if two strings are anagrams of each other without using functions.");
-let str1 = prompt("Enter a string 1:");
-let str2 = prompt("Enter a string 2:");
-
-str1 = str1.replace(/\s/g, '').toLowerCase();
-str2 = str2.replace(/\s/g, '').toLowerCase();
-
-let areAnagrams = true; 
-
-if (str1.length !== str2.length) {
-  areAnagrams = false; 
-} else {
-  const charCount = {};
-
-  for (let i = 0; i < str1.length; i++) {
-    const char = str1[i];
-    charCount[char] = (charCount[char] || 0) + 1;
-  }
-
-  for (let i = 0; i < str2.length; i++) {
-    const char = str2[i];
-    if (!charCount[char]) {
-      areAnagrams = false; 
-      break; 
-    }
-    charCount[char]--;
-  }
-
-  for (const char in charCount) {
-    if (charCount[char] !== 0) {
-      areAnagrams = false; 
-      break; // 
-    }
-  }
-}
-
-if (areAnagrams) {
-  console.log('The strings are anagrams.');
-} else {
-  console.log('The strings are not anagrams.');
-}
-
-
 
 //3. Replace all occurrences of a given substring with another substring in a string without using functions.
 
-alert("//3. Replace all occurrences of a given substring with another substring in a string without using functions.");
-console.log("\n //3. Replace all occurrences of a given substring with another substring in a string without using functions.");
-let originalString = prompt("Enter a original string: //for example : hello world hello");  
-let oldSubstring = prompt("Enter a old string://for example : hello");        
-let newSubstring = prompt("Enter a new string string://for example : hi");  
+let originalString = prompt("Enter a original string")
+let oldSubstring = prompt("Enter a old string")      
+let newSubstring = prompt("Enter a new string string");  
 let replacedString = '';
 
 let i = 0;
@@ -227,9 +168,7 @@ console.log(replacedString);
 
 //4. Truncate a string to a specified length and add "..." at the end if the string is longer than the specified length without using functions.
 
-alert("4. Truncate a string to a specified length and add (...) at the end if the string is longer than the specified length without using functions");
-console.log("\n  4. Truncate a string to a specified length and add (...) at the end if the string is longer than the specified length without using functions.");
-let original_String = prompt('Enter a original string ://for ex: This is a long string that needs to be truncated');
+let original_String = prompt('Enter a original string');
 let maxLength = 20;
 let truncatedString = '';
 
@@ -248,9 +187,7 @@ if (original_String.length <= maxLength) {
 
 //5. Determine if a string has balanced parentheses (e.g., "(()())" is balanced, but "())(" is not) without using functions.
 
-alert("5. Determine if a string has balanced parentheses (e.g., (()()) is balanced, but ())( is not) without using functions.");
-console.log("5.\n Determine if a string has balanced parentheses (e.g., (()()) is balanced, but ())(is not) without using functions.");
-let inputString = prompt("Enter a string with parentheses:"); // the user to input a string with parentheses
+let inputString = prompt("Enter a string with parentheses:");
 let openCount = 0;
 let closeCount = 0;
 for (let i = 0; i < inputString.length; i++) {
