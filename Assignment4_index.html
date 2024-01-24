@@ -10,21 +10,29 @@
 
 // 1] Write a JavaScript function called findMinNumber that takes an array of numbers as input and returns the minimum number in the array.
 function findMinNumber(numbers) {
-    let minNumber = numbers[0];
-  
-    for (const number of numbers) {
-      if (number < minNumber) {
-        minNumber = number;
-      }
-    }
-    return minNumber;
+  if (numbers.length === 0) {
+    return null; 
   }
+
+  let minNumber = numbers[0];
+  for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] < minNumber) {
+      minNumber = numbers[i];
+    }
+  }
+  return minNumber;
+}
+
+const numbers = [5, 2, 8, 4, 9];
+const min = findMinNumber(numbers);
+console.log(min); 
+
   
 
 
 // 2] Write a JavaScript function called reverseArray that takes an array as input and returns a new array with its elements reversed.
+
 function reverseArray(array) {
-    // Create a new empty array to store the reversed elements.
     let reversedArray = [];
   
     for (let i = array.length - 1; i >= 0; i--) {
@@ -33,35 +41,51 @@ function reverseArray(array) {
     return reversedArray;
   }
   
+const originalArr = [1, 2, 3, 4, 5];
+const reversedArr = reverseArray(originalArr);
+console.log(reversedArr); 
+
+  
 
 
 // 3] Write a JavaScript function called calculateAverage that takes an array of numbers as input and returns the average (mean) of the numbers.
 
 function calculateAverage(numbers) {
-    let sum = 0;
-  
-    for (let number of numbers) {
-      sum += number;
-    }
-    let average = sum / numbers.length;
-    return average;
+  if (numbers.length === 0) {
+    return null; 
   }
   
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  
+  const average = sum / numbers.length;
+  return average;
+}
+    
+const numbers = [5, 2, 8, 1, 9];
+const average = calculateAverage(numbers);
+console.log(average); 
+
+
 
 
 // 4] Write a JavaScript function called removeEvenNumbers that takes an array of numbers as input and returns a new array with all even numbers removed.
 
-function removeEvenNumbers(numbers) {
-    const filteredArray = [];
-  
-    for (const number of numbers) {
-      if (number % 2 !== 0) {
-        filteredArray.push(number);
-      }
+  function removeEvenNumbers(numbers) {
+  const oddNumbers = [];
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 !== 0) {
+      oddNumbers.push(numbers[i]);
     }
-    return filteredArray;
   }
-  
+  return oddNumbers;
+}
+const numbers = [1, 2, 3, 4, 5, 6, 7];
+const oddNumbers = removeEvenNumbers(numbers);
+console.log(oddNumbers); 
 
   </script>
 </body>
