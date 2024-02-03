@@ -1,0 +1,16 @@
+body {
+   margin: 0;
+  }
+  
+  .light-mode {
+    background-color: #ffffff;
+    color:black;
+  }
+  
+  .dark-mode {
+    background-color:black;
+    color: #ffffff;
+  }
+  .darkMode{
+    transform: translate(70rem,-2rem);
+  }
