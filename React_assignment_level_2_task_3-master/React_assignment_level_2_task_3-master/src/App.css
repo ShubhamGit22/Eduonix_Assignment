@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.form{
+  position: relative;
+  transform: translate(30rem,10rem);
+  width:20rem;
+  
+}
+.form button{
+  height: 2rem;
+margin-left: 4rem;
+  width: 6rem;
+  border-radius: 8px;
+  background-color: blanchedalmond;
+  margin-top: .5rem;
+
+}
+ .form button:hover{
+  cursor: pointer;
+  box-shadow: 1px 1px 2px 2px black;
+  
+
+}
