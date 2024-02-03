@@ -1,0 +1,53 @@
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;}
+.section{
+  height:30rem;
+  width:45rem;
+  transform: translate(20rem,15rem);
+}
+.tooltiptext{
+  width:20rem;
+  cursor: pointer;
+  height:4rem;
+ 
+}
+.tooltiptext2{
+  width:20rem;
+  height:4rem;
+  margin-top: 5rem;
+  cursor: pointer;
+ 
+
+}
+.tooltip{
+  
+  width:7.5rem;
+  height:5rem;
+  transform: translate(3rem,-10rem);
+  text-align: center;
+  color: white;
+  background-color: red;
+  border-radius: 10px;
+  display: none;
+
+
+}
+.tooltip2{
+  color: white;
+  background-color: red;
+  border-radius: 10px;
+  width:14rem;
+  height:5rem;
+  text-align: center;
+  transform: translateY(-7rem);
+  display: none;
+}
+.tooltiptext:hover .tooltip{
+
+  display: block;
+}
+.tooltiptext2:hover .tooltip2{
+ 
+  display: block;
+}
