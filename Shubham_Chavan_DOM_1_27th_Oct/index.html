@@ -1,36 +1,70 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Dom</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" >
 </head>
 <body>
-    <div class="gallery">
-        <img id="image1" src="https://i.pinimg.com/236x/30/94/64/30946481015b732f16e4b1c59243cd10.jpg" alt="Image 1">
-        <img id="image2" src="https://i.pinimg.com/564x/15/6b/a3/156ba398bb5dfaf2d5c5746b66984fd5.jpg" alt="Image 2">
-        <img id="image3" src="https://i.pinimg.com/originals/9c/85/d8/9c85d8351d07c79493ae641ed71bade6.gif" alt="Dice Image">
-        <img id="image4" src="https://i.pinimg.com/236x/53/aa/af/53aaaff2bd89ab21f55db9b5bb8bd024.jpg" alt="Image 4">
-    </div>
-    
 
-    <div class="form">
-        <form id="registration-form">
-            <input  type="text" id="name" placeholder="Name">
-            <input type="email" id="email" placeholder="Email">
-            <input type="text" id="username" placeholder="Username">
-            
-        </form>
+    <main>
+<section>
+<div class="gallery">
+    <div class="image" id="image1" onclick="registerUser(event)">
+        <img src="./image/hotel-3.jpg" alt="Image 1">
+      </div>
+      <div class="image" id="image2" onclick="displayUserInfo()" disabled>
+        <img src="./image/hotel-2.jpg" alt="Image 2">
+      </div>
+      <div class="image" id="image3" onclick="rollDice()" disabled>
+        <img src="./image/hotel-1.jpg" alt="Image 3">
+      </div>
+      <div class="image" id="image4" onclick="generateCoupon()" disabled>
+        <img src="./image/user-1.jpg" alt="Image 4">
+      </div>
+</div>
+<div id="formContainer" class="hidden">
+    <h2>Register</h2>
+    <form id="registerForm" onsubmit="register(event);">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required><br><br>
+      <label for="username">Username:</label>
+      <input type="text" id="username" required><br><br>
+      <button >Submit</button>
+    </form>
+  </div>
+  <div id="infoContainer" class="hidden">
+    <h2>User Info</h2>
+    <div id="userInfo"></div>
+  </div>
 
+<div id="diceContainer" class="hidden">
+    <h2>Dice Roll</h2>
+    <div id="diceResult"></div>
    
-    </div>
+  </div>
+
+  <div id="couponContainer" class="hidden">
+    <h2>Congratulations!</h2>
+    <div id="coupon"></div>
+  </div>
+  <div id="messageContainer" class="hidden">
+    <div id="message"></div>
+  </div>
+
+
+  <img id="congratsImage" class="hidden" src="images/congrats-image.jpg" alt="Congratulations">
+
+</section>
+
+
+    </main>
     
 
-    <div ><h1 id="message"></h1></div>
 
-    <script src="script.js"></script>
+    <script  src="script.js"></script>
 </body>
 </html>
