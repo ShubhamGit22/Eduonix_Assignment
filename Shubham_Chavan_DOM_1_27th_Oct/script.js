@@ -1,81 +1,124 @@
+let registeredUser ;
+let validation=[true,false,false,false]
+console.log(validation);
+let diceRolls = [];
+let rollCount = 0;
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    let clickedImages = 0;
-    let totalDiceValue = 0;
 
-    const image1 = document.getElementById("image1");
-    const image2 = document.getElementById("image2");
-    const image3 = document.getElementById("image3");
-    const image4 = document.getElementById("image4");
-    const form = document.getElementById("registration-form");
-    const message = document.getElementById("message");
-    const name= document.getElementById("name"); 
-    const username=document.getElementById("username");   
 
-    image1.addEventListener("click", () => {
+
+
+  function registerUser(event)  { 
+        event.preventDefault();
+        if(validation[0]===true) { 
+     document.getElementById('formContainer').classList.remove('hidden');
+     
+     
         
+      }
+      
+      else{
+        alert("click the 1 item")
+    }
+    
+
+}
+function register(event){
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+      const username = document.getElementById('username').value;
+      registeredUser = { name, username };
+      document.getElementById('userInfo').innerText = `Name: ${name}\nUsername: ${username}`;
+      
+      validation[1]=true
+     console.log(validation)
+     document.getElementById('formContainer').classList.add('hidden');
+
+}
+
+console.log(validation[1])
+
+
+function displayUserInfo(){
+  
+      if(validation[1]===true){
+      document.getElementById('infoContainer').classList.remove('hidden');
+      validation[2]=true
+      console.log(validation)
    
-        form.style.display = "block";
-        image1.style.pointerEvents = "none";  
-        message.innerText = "Fill your Details ";
-        clickedImages++;
-    });
+  }
+  else{
+      alert("click the 1st box first")
+  }
+    }
+
+
+    
+function rollDice() {
+ if(validation[2]===true){
+
+    if (rollCount < 3) {
+        const diceResult = Math.floor(Math.random() * 6) + 1;
+        diceRolls.push(diceResult);
+        rollCount++;
+        console.log(rollCount)
+    }
+  
+        if (rollCount === 3) {
+            validation[3]=true
+      console.log(validation)
+          const total = diceRolls.reduce((sum, val) => sum + val, 0);
+          console.log(total)
+          if (total > 10) {
+            document.getElementById('image4').style.cursor = 'pointer';
+            document.getElementById('couponContainer').classList.remove('hidden');
+            document.getElementById('diceContainer').classList.remove('hidden');
+            
+            document.getElementById('diceResult').innerText = `Dice Roll:->${rollCount} ,Dice Total:->${total}`;
+            document.getElementById('message').innerText = 'congratulation';
+
+          } else {
+            document.getElementById('message').innerText = 'Try again after scoring more than 10';
+            document.getElementById('messageContainer').classList.remove('hidden');
+            document.getElementById('image3').style.cursor = 'not-allowed';
+            document.getElementById('image4').style.cursor = 'not-allowed';
+            validation[3]=false;
+
+          }
+        }
+    
+        
+    
+
+ }
+ else{
+    alert("click the 1st box first")
+}
+ 
+  }
+  function generateCoupon() {
+    if(validation[3]===true){
+        const coupon=Math.random()*1000;
+        console.log(coupon)
+        document.getElementById('coupon').innerText = `Coupon Code: ${coupon}`;
+        document.getElementById('couponContainer').classList.remove('hidden');
+        document.getElementById('congratsImage').classList.remove('hidden');
+
+
+    }
+    else{
+        alert("click the 1st box first")
+    }
+
+  }
+
+
+
+
 
  
 
-    image2.addEventListener("click", () => {
-        if (clickedImages < 1 ) {
-            message.innerText = "Complete step 1.";
-        }
-        else if(name.value==="" || username.value===""){
-            message.innerText="Please Submit your details."
-        }
-        else {
-            
-            message.innerText = `Name: ${name.value}, Username: ${username.value}  ------------ Try your luck!!! `;
-            image2.style.pointerEvents = "none"; 
-            clickedImages++;
-        }
-    });
 
-    image3.addEventListener("click", () => {
-        if (clickedImages < 2) {
-            message.innerText = "Complete Step 2.";
-        } else if (clickedImages < 5) {
-            
-            const diceValue = Math.floor(Math.random() * 6) + 1;
-            totalDiceValue += diceValue;
-            message.innerText = `Dice Rolled: ${diceValue}, Your Score: ${totalDiceValue}`;
-            clickedImages++;
-            
-            if (clickedImages === 5 && totalDiceValue > 10) {
-                image4.style.pointerEvents = "auto"; 
-            }
-        } else {
-            message.innerText = "Limits Excedded.";
-        }
-    });
 
-    image4.addEventListener("click", () => {
-        if (clickedImages < 5) {
-            message.innerText = " Complete steps 3.";
-        } else {
-            
-            const couponCode = generateCouponCode();
-            message.innerText = `Coupon Code: ${couponCode}`;
-            image4.style.pointerEvents = "none"; 
-        }
-    });
-
-    function generateCouponCode() {
-        
-        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        let code = "";
-        for (let i = 0; i < 12; i++) {
-            const randomIndex = Math.floor(Math.random() * characters.length);
-            code += characters.charAt(randomIndex);
-        }
-        return code;
-    }
-});
+  
