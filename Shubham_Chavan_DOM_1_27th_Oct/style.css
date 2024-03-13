@@ -1,43 +1,36 @@
-
-
-.gallery {
-    display: flex;
-
-}
-
-img {
-    width: 450px;
-    height: 350px;
-    padding: 15px;
-    cursor: pointer;
-}
-.form{
-
-    display: hidden;
-}
-
-#registration-form {
-    display: none;
-    margin: 20px;
-}
-
-
-input[type="text"],
-input[type="email"] {
-    border-radius: 7px;
-    width: 25%;
-    padding: 10px;
-    
-    border: 1px solid #ccc;
-    
-}
-
-#message {
-    margin: 40px;
-    padding: 40px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #000000;
+body {
+   
     text-align: center;
-}
-
+    margin: 20px;
+    box-sizing: border-box;
+  }
+ 
+  .gallery {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .image img {
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #formContainer, #infoContainer, #diceContainer, #couponContainer, #messageContainer, #congratsImage {
+    margin-top: 20px;
+  }
+  #registerForm button{
+    height:2rem;
+    width: 6rem;
+    background-color: rgba(191, 74, 32, 0.855);
+  }
+  
