@@ -1,0 +1,43 @@
+/* Add this in your existing CSS file or create a new CSS file */
+
+/* Styles for PC display */
+
+/* Your existing styles for PC display */
+
+/* Styles for mobile display */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Adjust font size for mobile */
+  }
+
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-left, .header-location, .header-search, .header-login, .header-right {
+    margin-bottom: 10px;
+  }
+
+  /* Add styles for other header elements for mobile display */
+
+  .main-container {
+    padding: 10px;
+  }
+
+  .section-1 img {
+    width: 100%; /* Make the image full width in mobile */
+  }
+
+  .section-2-img img {
+    width: 100%; /* Make the image full width in mobile */
+    margin-bottom: 10px;
+  }
+
+  /* Add styles for other sections and product cards for mobile display */
+
+  footer {
+    text-align: center;
+  }
+}
